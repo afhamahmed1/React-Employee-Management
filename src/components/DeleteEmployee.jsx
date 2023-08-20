@@ -10,27 +10,27 @@ function DeleteEmployee(props) {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           viewBox="0,0,256,256"
           width="16px"
           height="16px"
-          fill-rule="nonzero"
+          fillRule="nonzero"
         >
           <g
             className="group fill-current transition-colors duration-300"
             fill="#b91c1c"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             stroke="none"
-            stroke-width="1"
-            stroke-linecap="butt"
-            stroke-linejoin="miter"
-            stroke-miterlimit="10"
-            stroke-dasharray=""
-            stroke-dashoffset="0"
-            font-family="none"
-            font-weight="none"
-            font-size="none"
-            text-anchor="none"
+            strokeWidth="1"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeMiterlimit="10"
+            strokeDasharray=""
+            strokeDashoffset="0"
+            fontFamily="none"
+            fontWeight="none"
+            fontSize="none"
+            textAnchor="none"
             style={{ mixBlendMode: "normal" }}
           >
             <g transform="scale(10.66667,10.66667)">
