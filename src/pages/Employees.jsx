@@ -89,8 +89,8 @@ function App() {
   }
 
   return (
-    <div className="App bg-purple-50 min-h-screen">
-      <div className="flex flex-wrap flex-col justify-center gap-3 items-center mt-4">
+    <div className="App ">
+      <div className="flex flex-wrap flex-col justify-center gap-3 items-center">
         <div className="flex flex-wrap justify-center">
           {employees.map((employee) => {
             const removeEmployee = (

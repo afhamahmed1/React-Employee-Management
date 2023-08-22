@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Employees", href: "/employees" },
+  { name: "Team", href: "/team" },
+  { name: "Projects", href: "/projects" },
+  { name: "Calendar", href: "/calender" },
 ];
 
 function classNames(...classes) {
@@ -37,19 +38,27 @@ export default function Header(props) {
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
-                        <a
+                        <NavLink
                           key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-purple-900 text-white"
-                              : "text-purple-300 hover:bg-purple-700 hover:text-white",
-                            "rounded-md px-3 py-2 text-sm font-medium"
-                          )}
+                          to={item.href}
+                          //   className={classNames(
+                          //     item.current
+                          //       ? "bg-purple-900 text-white"
+                          //       : "text-purple-300 hover:bg-purple-700 hover:text-white",
+                          //     "rounded-md px-3 py-2 text-sm font-medium"
+                          //   )}
+                          className={({ isActive }) => {
+                            return (
+                              "rounded-md px-3 py-2 text-sm font-medium " +
+                              (isActive
+                                ? "bg-purple-900 text-white"
+                                : "text-purple-300 hover:bg-purple-700 hover:text-white")
+                            );
+                          }}
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
@@ -136,27 +145,29 @@ export default function Header(props) {
             <Disclosure.Panel className="sm:hidden">
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {navigation.map((item) => (
-                  <Disclosure.Button
+                  <NavLink
                     key={item.name}
                     as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-purple-900 text-white"
-                        : "text-purple-300 hover:bg-purple-700 hover:text-white",
-                      "block rounded-md px-3 py-2 text-base font-medium"
-                    )}
+                    to={item.href}
+                    className={({ isActive }) => {
+                      return (
+                        "block rounded-md px-3 py-2 text-sm font-medium " +
+                        (isActive
+                          ? "bg-purple-900 text-white"
+                          : "text-purple-300 hover:bg-purple-700 hover:text-white")
+                      );
+                    }}
                     aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </NavLink>
                 ))}
               </div>
             </Disclosure.Panel>
           </>
         )}
       </Disclosure>
-      {props.children}
+      <div className="bg-purple-50 min-h-screen p-2"> {props.children}</div>
     </>
   );
 }
