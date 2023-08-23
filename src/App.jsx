@@ -2,6 +2,7 @@ import "./index.css";
 import Employees from "./pages/Employees";
 import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dictionary from "./pages/Dictionary";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header>
         <Routes>
           <Route path="/" element={<h1>Dashboard</h1>} />
-          <Route path="/team" element={<h1>Dashboard</h1>} />
+          <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/projects" element={<h1>Dashboard</h1>} />
           <Route path="/calender" element={<h1>Dashboard</h1>} />
           <Route path="/employees" element={<Employees />} />
